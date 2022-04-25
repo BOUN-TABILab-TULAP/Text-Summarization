@@ -1,4 +1,3 @@
-import json
 from typing import Optional
 
 import torch
@@ -39,7 +38,7 @@ async def generate(item: Item):
     result = test_data.map(api_helper.generate_summary, batched=True, batch_size=api_helper.batch_size,
                            load_from_cache_file=False)
 
-    return json.dumps({"summary": result['predictions'][0]}, ensure_ascii=False)
+    return {"summary": result['predictions'][0]}
 
 
 if __name__ == "__main__":
