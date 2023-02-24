@@ -16,7 +16,7 @@ class Item(BaseModel):
 app = FastAPI()
 api_helper = ApiHelper("batubayk/combined_tr_berturk32k_cased_summary", do_tr_lowercase=True, source_prefix="",
                        max_source_length=512,
-                       max_target_length=120, num_beams=4, ngram_blocking_size=3, early_stopping=None,
+                       max_target_length=120, num_beams=4, ngram_blocking_size=3, early_stopping=False,
                        use_cuda=torch.cuda.is_available(),
                        batch_size=1, language="tr")
 
